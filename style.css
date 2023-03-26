@@ -1,0 +1,574 @@
+body {
+  background: black;
+  margin: 0;
+  width: 100%;
+}
+
+img {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+h1,
+h2,
+h3,
+p,
+a,
+b,
+span {
+  color: white;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+a {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.smol_img {
+  width: 100px;
+}
+
+nav {
+  position: fixed;
+  bottom: 0;
+  height: 3.5rem;
+  max-height: 16vh;
+  width: 100%;
+  background: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px rgb(66, 69, 72) solid;
+}
+
+nav .icon,
+#nav_700 .icon {
+  fill: rgb(231, 233, 234);
+  width: 1.75rem;
+}
+
+.hidden_on_phone {
+  display: none;
+}
+
+.hidden_on_tablet {
+  display: block;
+}
+
+.only_desktop {
+  display: none;
+}
+
+#home_top {
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  padding-left: 1rem;
+}
+
+#home_top img,
+.nav_700_inner img {
+  width: 40px;
+  border-radius: 100px;
+  position: absolute;
+}
+
+.logo {
+  width: 28px;
+  fill: rgb(29, 155, 240);
+  margin-left: auto;
+  margin-right: auto;
+}
+#home_nav,
+#user_nav {
+  border-bottom: 1px rgb(66, 69, 72) solid;
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(20px);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#home_nav .inner,
+#user_nav .inner {
+  display: flex;
+  justify-content: space-around;
+}
+
+#home_nav .active,
+#user_nav .active {
+  font-weight: 600;
+  color: white;
+  padding-bottom: 1rem;
+  border-bottom: 5px rgb(29, 155, 240) solid;
+}
+
+#home_nav .deactive,
+#user_nav .deactive {
+  font-weight: 400;
+  color: rgb(113, 118, 123);
+}
+#show_tweets {
+  border-bottom: 1px rgb(66, 69, 72) solid;
+}
+#show_tweets p {
+  text-align: center;
+  color: rgb(29, 155, 240);
+}
+
+.tweet {
+  display: flex;
+  padding: 0.8rem;
+  border-bottom: 1px rgb(66, 69, 72) solid;
+}
+
+#tweets .right .top,
+#tweets .right .top .info,
+#my_tweets .right .top,
+#my_tweets .right .top .info {
+  display: flex;
+  align-items: center;
+}
+
+#tweets .right .top .info p,
+#my_tweets .right .top .info p {
+  color: rgb(113, 118, 123);
+  padding: 0 2px 0 2px;
+}
+
+#tweets .right .message,
+#my_tweets .right .message {
+  margin-top: 0;
+}
+
+#tweets .right img,
+#my_tweets .right img {
+  border-radius: 8px;
+}
+
+.dots {
+  fill: rgb(113, 118, 123);
+  width: 20px;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.avatar {
+  width: 3rem;
+  border-radius: 50px;
+  padding-right: 0.8rem;
+}
+
+.check {
+  width: 20px;
+  fill: rgb(29, 155, 240);
+}
+
+#tweets .right .bottom,
+#my_tweets .right .bottom {
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+#tweets .right .bottom p,
+#my_tweets .right .bottom p {
+  color: rgb(113, 118, 123);
+}
+#tweets .right .bottom .icon,
+#my_tweets .right .bottom .icon {
+  width: 20px;
+  fill: rgb(113, 118, 123);
+  padding: 0 5px 0 5px;
+}
+#tweets .right .bottom div,
+#my_tweets .right .bottom div {
+  padding: 0 5px 0 5px;
+}
+#tweets .right .bottom div:last-of-type,
+#my_tweets .right .bottom div:last-of-type {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+#user_top {
+  width: 100%;
+  padding: 0.8rem;
+  position: fixed;
+  backdrop-filter: blur(20px);
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 11;
+}
+#user_top .icon {
+  width: 1.3rem;
+  fill: white;
+}
+
+#user_top .user_info {
+  margin-left: 3rem;
+}
+#user_top .user_info .small_txt,
+#user_more_info .user_info .small_txt {
+  color: rgb(113, 118, 123);
+}
+
+#user_top .user_info p,
+#user_top .user_info h3,
+#user_more_info .user_info p,
+#user_more_info .user_info h3 {
+  margin: 0;
+}
+
+#user_profile .user_cover {
+  padding-top: 4.2rem;
+  height: 250px;
+}
+
+#user_profile .user_top_info {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -4rem;
+}
+#user_profile .profile_picture {
+  width: 5.5rem;
+  border: 3px black solid;
+  border-radius: 100px;
+}
+
+#user_profile .user_top_info .icon {
+  fill: white;
+  width: 1.2rem;
+  /*  height: 2rem; */
+  border: 1px rgb(128, 128, 128) solid;
+  border-radius: 100px;
+  padding: 8px;
+  margin: 0 5px 0 5px;
+}
+
+#user_profile .user_top_info button {
+  all: unset;
+  color: white;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
+  border: 1px rgb(128, 128, 128) solid;
+  border-radius: 100px;
+  padding: 6px;
+  margin-left: 5px;
+  z-index: 10;
+  /* position: sticky;
+  top: 0; */
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 15px 10px 15px;
+}
+
+#user_more_info .user_info {
+  margin-left: 1rem;
+}
+
+#user_profile .user_info .icon {
+  fill: rgb(128, 128, 128);
+  width: 1.2rem;
+}
+
+#user_profile .user_info .joined {
+  display: flex;
+  padding: 0.8rem 0 0.8rem 0;
+}
+
+#user_profile .user_info .user_followeres {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+#user_profile .user_info .user_followeres b {
+  padding-right: 5px;
+}
+
+#user_profile .user_top_info .info_next_to_profile_picture {
+  /* display: flex;
+  align-items: center; */
+  display: flex;
+  align-self: end;
+}
+
+#login,
+#sign_up {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#login form,
+#sign_up form {
+  display: grid;
+  width: 30%;
+}
+
+#login form input,
+#sign_up form input {
+  margin: 0.3rem;
+  height: 2rem;
+}
+
+#login form button,
+#sign_up form button {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+#login form .logo {
+  width: 30%;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 700px) {
+  .hidden_on_phone {
+    display: block;
+  }
+  .hidden_on_tablet {
+    display: none !important;
+  }
+  nav {
+    display: none;
+  }
+  main {
+    display: grid;
+    grid-template-columns: 4rem 600px;
+    justify-content: center;
+  }
+
+  #nav_700 {
+    width: 4rem;
+    border-right: 1px rgb(66, 69, 72) solid;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #nav_700 .nav_700_inner {
+    display: grid;
+    position: fixed;
+  }
+
+  #nav_700 .nav_700_inner .icon {
+    padding-top: 1.5rem;
+  }
+
+  #nav_700 .nav_700_inner .logo {
+    width: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 0.3rem;
+  }
+
+  .nav_700_inner img {
+    position: fixed;
+    bottom: 2rem;
+  }
+  #home_top {
+    display: none;
+  }
+
+  #home_nav h1 {
+    padding-left: 1rem;
+  }
+
+  #home_nav_and_tweets {
+    width: 600px;
+    border-right: 1px rgb(66, 69, 72) solid;
+  }
+
+  .tweet input {
+    all: unset;
+    padding: 1rem 0 2rem 0;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1.3rem;
+    color: white;
+  }
+
+  .tweet input::placeholder {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1.3rem;
+  }
+
+  .tweet .right .bottom .icon {
+    width: 20px;
+    fill: rgb(29, 155, 240);
+    padding: 0 5px 0 5px;
+  }
+
+  .tweet .right .bottom {
+    width: 500px;
+    display: flex;
+  }
+
+  button {
+    all: unset;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1.1rem;
+    color: white;
+    background: rgb(29, 155, 240);
+    padding: 6px 15px 6px 15px;
+    border-radius: 20px;
+  }
+
+  .tweet .right .bottom div:last-of-type {
+    display: flex;
+    margin-left: auto;
+  }
+
+  #tweets .right .bottom div,
+  #my_tweets .right .bottom div {
+    padding: 0 1rem 0 1rem;
+  }
+
+  #user_top {
+    width: 572px;
+    margin-left: 1px;
+  }
+
+  #user_profile {
+    border: 1px rgb(128, 128, 128) solid;
+    border-bottom: none;
+  }
+}
+
+@media (min-width: 990px) {
+  .only_desktop {
+    display: block;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: 3rem 600px 320px;
+    justify-content: center;
+  }
+
+  #nav_700 {
+    width: 3rem;
+  }
+  #right_col {
+    padding-left: 1.3rem;
+  }
+
+  #user_profile .profile_picture {
+    width: 8rem;
+  }
+
+  #user_profile .user_top_info {
+    margin-top: -6.5rem;
+  }
+
+  #right_col input {
+    all: unset;
+  }
+  #right_col .input_container {
+    display: flex;
+    align-items: center;
+    background: #16181c;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1rem;
+    color: white;
+    width: 327px;
+    padding: 0.8rem;
+    border-radius: 100px;
+    position: fixed;
+    top: 10px;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.5);
+  }
+
+  #right_col .input_container .icon {
+    width: 1.2rem;
+    fill: rgb(113, 118, 123);
+    margin-right: 1rem;
+  }
+
+  #right_col input::placeholder {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1rem;
+    color: rgb(113, 118, 123);
+  }
+
+  #trends_container,
+  #who_to_follow {
+    background: #16181c;
+    border-radius: 16px;
+    width: 320px;
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+
+  #trends_container h2,
+  #who_to_follow h2 {
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+
+  #trends_container .trend {
+    margin-bottom: 1rem;
+  }
+
+  #trends_container .trend p {
+    margin: 3px;
+  }
+  #trends_container .trend .small_txt,
+  #who_to_follow .follow .small_txt {
+    color: rgb(113, 118, 123);
+  }
+
+  #trends_container p:last-of-type,
+  #who_to_follow p:last-of-type {
+    color: rgb(29, 155, 240);
+    margin-bottom: 0;
+  }
+
+  #who_to_follow {
+    margin-top: 4rem;
+  }
+
+  #who_to_follow .follow {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  #who_to_follow .follow img {
+    width: 3.3rem;
+    height: 3.3rem;
+    border-radius: 100px;
+  }
+
+  #who_to_follow .follow button {
+    color: black;
+    background: white;
+    height: 1.3rem;
+  }
+
+  #who_to_follow p,
+  #who_to_follow a {
+    text-decoration: none;
+    margin: 0;
+  }
+
+  .small_txt {
+    color: rgb(113, 118, 123);
+  }
+}
+
+.error_red {
+  border-color: red;
+}
+
+.hide {
+  display: none !important;
+}

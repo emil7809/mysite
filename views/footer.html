@@ -1,0 +1,71 @@
+<section id="right_col" class="only_desktop">
+    <div class="input_container">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="icon">
+            <g>
+                <path
+                    d="M10.25 3.75c-3.59 0-6.5 2.91-6.5 6.5s2.91 6.5 6.5 6.5c1.795 0 3.419-.726 4.596-1.904 1.178-1.177 1.904-2.801 1.904-4.596 0-3.59-2.91-6.5-6.5-6.5zm-8.5 6.5c0-4.694 3.806-8.5 8.5-8.5s8.5 3.806 8.5 8.5c0 1.986-.682 3.815-1.824 5.262l4.781 4.781-1.414 1.414-4.781-4.781c-1.447 1.142-3.276 1.824-5.262 1.824-4.694 0-8.5-3.806-8.5-8.5z">
+                </path>
+            </g>
+        </svg>
+        <input type="search" placeholder="Search Twitter">
+    </div>
+
+    <section id="who_to_follow">
+
+        <h2>Who to follow</h2>
+        % for user in users:
+        <a href='{{user["user_username"]}}'>
+            <div class="follow">
+                <img src="../avatars/{{user['user_avatar']}}" alt="avatar">
+                <div>
+                    <p>{{user["user_name"]}} {{user["user_last_name"]}}</p>
+                    <p class="small_txt">@{{user["user_username"]}}</p>
+                </div>
+                <button>Follow</button>
+            </div>
+        </a>
+        % end
+
+        <p>Show more</p>
+
+    </section>
+    <section id="trends_container">
+        <h2>Trends for you</h2>
+        % for trend in trends:
+        <div class="trend">
+            <div>
+                <div class="flex">
+                    <p class="small_txt">Trending in Denmark</p>
+                    <div class="dots">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <g>
+                                <path
+                                    d="M3 12c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9 2c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm7 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z">
+                                </path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <p>{{trend["title"]}}</p>
+                <p class="small_txt">{{trend["total_tweets"]}} Tweets</p>
+            </div>
+        </div>
+        % end
+        <p>Show more</p>
+    </section>
+    <p class="small_txt">Terms of Service
+        Privacy Policy
+        Cookie Policy
+        Accessibility
+        Ads info
+        More
+        © 2023 Twitter, Inc.</p>
+</section>
+</main>
+<footer>footer</footer>
+<script src="/js/validate.js"></script>
+<script src="/js/app.js"></script>
+</body>
+
+
+</html>
