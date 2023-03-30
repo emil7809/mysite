@@ -1,3 +1,6 @@
+PRAGMA foreign_keys = ON;
+PRAGMA foreign_keys;
+
 DROP TABLE IF EXISTS tweets;
 
 CREATE TABLE tweets(
@@ -11,7 +14,8 @@ CREATE TABLE tweets(
   tweet_total_likes     TEXT,
   tweet_total_views     TEXT,
   tweet_total_replies   TEXT,
-  PRIMARY KEY(tweet_id)
+  PRIMARY KEY(tweet_id),
+  FOREIGN KEY(tweet_user_fk) REFERENCES users(user_id)
 ) WITHOUT ROWID;
 
 /* SLOSS 1*/
@@ -557,6 +561,24 @@ INSERT INTO tweets VALUES(
   "64200000",
   "171000"
   );
+/* PRAGMA foreign_keys = ON;
+
+  INSERT INTO tweets VALUES(
+  "bcb60a05d2294d8c93f4654b8ad414b4", 
+  "xxx",
+  "1676740071",
+  "A",
+  "",
+  "0",
+  "36200",
+  "454300",
+  "64200000",
+  "171000"
+  );
+ */
+  SELECT * FROM tweets;
+
+
 
 
   
