@@ -74,6 +74,22 @@ def validate_user_confirm_password():
 
 ##############################
 
+USER_PHONE_LEN = 8
+USER_PHONE_REGEX = "^[0-9]*$"
+
+def validate_user_phone():
+  """ print(request.forms.user_phone)
+  print("*"*30) """
+  error = f"user_phone must be {USER_PHONE_LEN} characters and only contain numbers"
+  request.forms.user_phone = request.forms.user_phone.strip()
+  if len(request.forms.user_phone) != USER_PHONE_LEN: raise Exception(error)
+  if not re.match(USER_PHONE_REGEX, request.forms.user_phone): raise Exception(error)
+  return request.forms.user_phone
+
+##############################
+
+##############################
+
 MY_COOKIE_SECRET = "!L+h3XE2oXli7KC4eQM/pGg==?gAWVaQAAAAAAAACMBHVzZXKUfZQojAl1c2VyX25hbWWUjBBlbWlseWhvb2xhaGFueHh4lIwPdXNlcl9maXJzdF9uYW1llIwIRW1pbHlYWFiUjA51c2VyX2xhc3RfbmFtZZSMC0hvb2xhaGFuWFhYlHWGlC4="
 
 def validate_user_logged():
@@ -83,7 +99,7 @@ def validate_user_logged():
 
 ##############################
 
-##############################
+
 
 USER_USERNAME_MIN = 4
 USER_USERNAME_MAX = 15
@@ -91,8 +107,8 @@ USER_USERNAME_REGEX = "^[a-zA-Z0-9_]*$"
 
 def validate_user_username():
   #print(request.forms.user_username("\U00000394"))
-  print(request.forms.user_username)
-  print("*"*30)
+  """ print(request.forms.user_username)
+  print("*"*30) """
   error = f"user_username must be between {USER_USERNAME_MIN} and {USER_USERNAME_MAX} english characters"
   request.forms.user_username = request.forms.user_username.strip()
   if len(request.forms.user_username) < USER_USERNAME_MIN: raise Exception(error)

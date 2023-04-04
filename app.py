@@ -11,6 +11,7 @@ import git
 import api.api_tweet
 import api.api_login
 import api.api_sign_up
+import api.validate_user
 
 import views.index
 import views.profile
