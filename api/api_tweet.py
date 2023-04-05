@@ -9,7 +9,7 @@ def _():
         x.validate_tweet()
         db = x.db()
         tweet_id = str(uuid.uuid4().hex)
-        tweet_user_fk = "defd12b9d88a48369d359d2f0774bfe4"
+        tweet_user_fk = "c431ad04c73c4791b7c1dca866f1ff9b"
         tweet_created_at = int(time.time())
         tweet_message = request.forms.get("message")
         tweet_image = ""

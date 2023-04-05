@@ -16,6 +16,7 @@ import api.validate_user
 import views.index
 import views.profile
 import views.login
+import views.me
 
 
 @post('/secret_url_for_git_hook')

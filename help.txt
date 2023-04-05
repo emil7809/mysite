@@ -1,0 +1,7 @@
+validate_user.py:
+    - Why wont the backend work, but the front end works?
+
+
+TODO
+
+make it posible for the one who is logged in to tweet
