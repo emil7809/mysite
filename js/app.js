@@ -191,6 +191,9 @@
             return
         }
 
+        document.querySelector("#reset_password_form").classList.add("hide")
+        
+
         const password_changed = document.querySelector("#password_changed")
         const data = await conn.json()
             console.log(data)
@@ -204,7 +207,7 @@
             }
             password_changed.insertAdjacentHTML("afterbegin",
             `
-            <p class="message">${data.info}</p>
+            <h1 class="message">${data.info}</h1>
             <a href="/login"><button type="button">Login</button></a>
             `)
             return

@@ -27,6 +27,7 @@ span {
 a {
   font-weight: 600;
   font-size: 1.1rem;
+  text-decoration: none;
 }
 
 .smol_img {
@@ -466,6 +467,12 @@ nav .icon,
   text-decoration: none;
   color: rgb(29, 155, 240);
   padding: 1px 5px;
+}
+#reset_password #password_changed {
+  display: grid;
+}
+#reset_password #password_changed a {
+  justify-self: center;
 }
 
 @media (min-width: 700px) {
