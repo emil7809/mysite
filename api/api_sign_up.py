@@ -14,9 +14,6 @@ import random
 @post("/api-sign-up")
 def _():
     try:
-        admin_email = "emil7809@gmail.com"
-        google_key = "xvffngueczmspegn"
-
         user_email = x.validate_email()
         #user_phone = x.validate_user_phone()
         user_username = x.validate_user_username()
@@ -25,7 +22,7 @@ def _():
         salt = bcrypt.gensalt()
         user_id = str(uuid.uuid4().hex)
         #print(user_id)
-        user_api_key = random.randint(1000, 9999)
+        #user_password_key = random.randint(1000, 9999)
         user_verification_key = str(uuid.uuid4().hex)
         #user_verification_txt = request.params.get("user_verification_txt", "")
         user = {
@@ -46,7 +43,7 @@ def _():
             "user_total_dislikes" : 0,
             "user_avatar" : "avatar.jpg",
             "user_cover" : "",
-            "user_api_key" : user_api_key,
+            "user_password_key" : "",
             "user_verification_key" : user_verification_key,
             "user_verification_txt": "",
             "user_verified_at" : 0
@@ -68,7 +65,7 @@ def _():
         
         message = MIMEMultipart("alternative")
         message["Subject"] = "Verification"
-        message["From"] = admin_email
+        message["From"] = x.admin_email
         message["To"] = user_email
 
         html =  f"""\
@@ -87,9 +84,9 @@ def _():
 
         context = ssl.create_default_context()
         with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
-            server.login(admin_email, google_key)
+            server.login(x.admin_email, x.google_key)
             server.sendmail(
-                admin_email, user_email, message.as_string()
+                x.admin_email, user_email, message.as_string()
             )
 
         #if user_verification_txt != user_verification_key: raise Exception(context, user_verification_key, user_verification_txt)

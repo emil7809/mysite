@@ -12,6 +12,8 @@ import api.api_tweet
 import api.api_login
 import api.api_sign_up
 import api.validate_user
+import api.api_forgotten_password
+import api.api_reset_password
 
 import views.index
 import views.profile

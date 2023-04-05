@@ -122,3 +122,6 @@ trends = [
     {"title": "Norge", "total_tweets": "1,693"},
     {"title": "Otto", "total_tweets": "20K"}
 ]
+
+admin_email = "emil7809@gmail.com" 
+google_key = "xvffngueczmspegn"

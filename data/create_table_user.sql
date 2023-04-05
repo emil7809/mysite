@@ -18,7 +18,7 @@ CREATE TABLE users(
     user_total_dislikes    TEXT,
     user_avatar            TEXT UNIQUE,
     user_cover             TEXT UNIQUE,
-    user_api_key           TEXT,
+    user_password_key      TEXT,
     user_verification_key  TEXT NOT NULL UNIQUE,
     user_verification_txt  TEXT NOT NULL,
     user_verified_at       TEXT,
@@ -33,4 +33,6 @@ INSERT INTO users VALUES("1ad43d14574045a39006da33bc476d20", "daniel@mail.com", 
 
 CREATE INDEX inx_user_name ON users(user_name);
 CREATE INDEX inx_user_last_name ON users(user_last_name);
+
+
 

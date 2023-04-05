@@ -166,6 +166,50 @@
         location.href = "/login"
     }
 
+    async function resetPassword() {
+        const frm = event.target.form
+        const user_password_key = event.target.form.user_password_key.value
+        console.log(user_password_key)
+        const conn = await fetch(`/api-reset-password/${user_password_key}`, {
+            method: "POST",
+            body: new FormData(frm)
+        })
+        
+
+        if (!conn.ok) {
+            const data = await conn.json()
+            console.log(data)
+            const error = document.querySelector("#error3")
+            let error_message = document.querySelector(".error3")
+            if (error_message) {
+                error_message.parentNode.removeChild(error_message); 
+            }
+            error.insertAdjacentHTML("afterbegin",
+            `
+            <p class="error3">${data.info}</p>
+            `)
+            return
+        }
+
+        const password_changed = document.querySelector("#password_changed")
+        const data = await conn.json()
+            console.log(data)
+            let error_message = document.querySelector(".error3")
+            if (error_message) {
+                error_message.parentNode.removeChild(error_message); 
+            }
+            let message = document.querySelector("message")
+            if (message) {
+                message.parentNode.removeChild(message); 
+            }
+            password_changed.insertAdjacentHTML("afterbegin",
+            `
+            <p class="message">${data.info}</p>
+            <a href="/login"><button type="button">Login</button></a>
+            `)
+            return
+    }
+
   /*   function removeRed() {
         console.log("Remove red")
         const frm = event.target.form
