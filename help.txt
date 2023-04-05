@@ -4,4 +4,44 @@ validate_user.py:
 
 TODO
 
-make it posible for the one who is logged in to tweet
+A user can:
+
+    - get a change to create a new password, if forgotten
+    - tweet / create a tweet
+    - re-tweet
+    - comment on a tweet
+    - see the profile of other users
+    - follow other users
+    - unfollow other users
+    - like a tweet
+    - dislike a tweet
+    - edit profile (email, name, last name, user name, etc) including avatar and banner
+    - verify the account
+    - verify Twitter "gold"
+    - search for other users or topics/trends in the system
+    - delete account
+
+The system
+    - The blue check mark appear when a user has more than 10 followers
+    - When a user wants to get Twitter "gold", an SMS is sent with the code to get Tweet "gold"
+
+Must validate in the front-end
+Must validate in the back-end
+All SQL statements are secured. Meaning that you must use placeholders as the ?
+
+Tweet
+    - Can be text and/or picture
+
+Admin
+login with a default email and password. No need to sign-up or access to forgotten password
+logout
+See a list of all users
+Delete any user
+Block/Unblock any user - Think of activate/deactivate a user
+A user that gets blocked or unblocked, must receive an email with info about it
+
+You
+    - Must be able to show that you can do continuous deployment by using GIT and getting your code on PythonAnywhere
+
+    - Bridges at least 1
+

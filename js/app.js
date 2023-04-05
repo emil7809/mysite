@@ -184,4 +184,14 @@
             signUpForm.classList.remove("hide")
         }
     }
+
+    function toggleEditProfile() {
+        const editModule = document.querySelector("#edit_profile_module")
+        if (editModule.classList.contains("hide")) {
+            editModule.classList.remove("hide")
+        }
+        else {
+            editModule.classList.add("hide")
+        }
+    }
   

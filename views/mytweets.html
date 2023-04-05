@@ -5,7 +5,7 @@
         </div>
         <div class="right">
             <form method="POST" onsubmit="validate(tweet); return false">
-                <input name="message" placeholder="What's happening?" type="text" data-validate="str"
+                <input autocomplete="off" name="message" placeholder="What's happening?" type="text" data-validate="str"
                     data-min="{{tweet_min_len}}" data-max="{{tweet_max_len}}">
                 <div class="bottom">
                     <svg viewBox="0 0 24 24" aria-hidden="true" class="icon">

@@ -17,6 +17,7 @@ import views.index
 import views.profile
 import views.login
 import views.me
+import views.forgotten_password
 
 
 @post('/secret_url_for_git_hook')
