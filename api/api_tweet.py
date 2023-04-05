@@ -3,13 +3,18 @@ import uuid
 import time
 import x
 
+import api.api_login
+
 @post("/")
 def _():
     try:
+        user = request.get_cookie("user", secret=x.MY_COOKIE_SECRET)
+        user_id = user["user_id"]
+        print(user_id)
         x.validate_tweet()
         db = x.db()
         tweet_id = str(uuid.uuid4().hex)
-        tweet_user_fk = "c431ad04c73c4791b7c1dca866f1ff9b"
+        tweet_user_fk = user_id
         tweet_created_at = int(time.time())
         tweet_message = request.forms.get("message")
         tweet_image = ""

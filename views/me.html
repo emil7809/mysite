@@ -30,20 +30,20 @@
             <form>
                 <div class="edit_input_container">
                     <label for="edit_name">First Name</label>
-                    <input name="edit_name" type="text" placeholder="First Name">
+                    <input name="edit_name" type="text" placeholder="{{me['user_name']}}">
                 </div>
                 <div class="edit_input_container">
                     <label for="edit_last_name">Last Name</label>
-                    <input name="edit_last_name" type="text" placeholder="Last Name">
+                    <input name="edit_last_name" type="text" placeholder="{{me['user_last_name']}}">
                 </div>
                 <div class="edit_input_container">
                     <label for="edit_username">User Name</label>
-                    <input name="edit_username" type="text" placeholder="User Name">
+                    <input name="edit_username" type="text" placeholder="{{me['user_username']}}">
                 </div>
 
                 <div class="edit_input_container">
                     <label for="edit_email">Email</label>
-                    <input name="edit_email" type="text" placeholder="Email">
+                    <input name="edit_email" type="text" placeholder="{{me['user_email']}}">
                 </div>
 
                 <div class="edit_input_container">
@@ -51,14 +51,15 @@
                     <input name="edit_password" type="text" placeholder="Password">
                 </div>
                 <div>
-                    <button>Delete account</button>
+                    <input type="text" name="user_id" value="{{me['user_id']}}">
+                    <button type="button" onclick="deletUser()">Delete account</button>
                 </div>
             </form>
         </div>
     </div>
 </section>
 <div>
-    <!-- <img src="../avatars/{{user['user_avatar']}}" alt="avatar"> -->
+    <!-- <img src="../avatars/{{me['user_avatar']}}" alt="avatar"> -->
     <div>
         <section id="user_top">
             <div class="flex">
@@ -70,7 +71,7 @@
                 </svg>
                 <div class="user_info">
                     <div class="flex">
-                        <h3>{{user["user_username"]}}</h3>
+                        <h3>{{me["user_username"]}}</h3>
                         <svg viewBox="0 0 24 24" aria-label="Verified account" role="img" class="check"
                             data-testid="icon-verified">
                             <g>
@@ -80,17 +81,17 @@
                             </g>
                         </svg>
                     </div>
-                    <p class="small_txt">{{user["user_total_tweets"]}} Tweets</p>
+                    <p class="small_txt">{{me["user_total_tweets"]}} Tweets</p>
                 </div>
 
             </div>
         </section>
         <section id="user_profile">
             <div class="user_cover">
-                <img src="./user_cover/{{user['user_cover']}}">
+                <img src="./user_cover/{{me['user_cover']}}">
             </div>
             <div class="user_top_info">
-                <img class="profile_picture" src="./avatars/{{user['user_avatar']}}" alt="avatar">
+                <img class="profile_picture" src="./avatars/{{me['user_avatar']}}" alt="avatar">
                 <div class="info_next_to_profile_picture">
                     <svg viewBox="0 0 24 24" aria-hidden="true" class="icon" style="color: rgb(239, 243, 244);">
                         <g>
@@ -112,7 +113,7 @@
             <div id="user_more_info">
                 <div class="user_info">
                     <div class="flex">
-                        <h3>{{user["user_name"]}} {{user["user_last_name"]}}</h3>
+                        <h3>{{me["user_name"]}} {{me["user_last_name"]}}</h3>
                         <svg viewBox="0 0 24 24" aria-label="Verified account" role="img" class="check"
                             data-testid="icon-verified">
                             <g>
@@ -122,7 +123,7 @@
                             </g>
                         </svg>
                     </div>
-                    <p class="small_txt">@{{user["user_username"]}}</p>
+                    <p class="small_txt">@{{me["user_username"]}}</p>
                     <div class="joined">
                         <svg viewBox="0 0 24 24" aria-hidden="true" class="icon">
                             <g>
@@ -131,15 +132,15 @@
                                 </path>
                             </g>
                         </svg>
-                        <p class="small_txt">Joined {{user["user_createdat"]}}</p>
+                        <p class="small_txt">Joined {{me["user_createdat"]}}</p>
                     </div>
                     <div class="user_followeres">
                         <div class="flex">
-                            <b>{{user["user_total_following"]}}</b>
+                            <b>{{me["user_total_following"]}}</b>
                             <p class="small_txt">Following</p>
                         </div>
                         <div class="flex">
-                            <b>{{user["user_total_followers"]}}</b>
+                            <b>{{me["user_total_followers"]}}</b>
                             <p class="small_txt">Followers</p>
                         </div>
                     </div>
@@ -157,9 +158,9 @@
         </section>
         <div id="home_nav_and_tweets">
 
-            % if me:
+
             % include("mytweets")
-            % end
+
 
             <section id="my_tweets"></section>
             % include("tweets")

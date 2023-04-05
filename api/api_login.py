@@ -25,11 +25,16 @@ def _():
             is_cookie_https = False
         response.set_cookie("user", user, secret=x.MY_COOKIE_SECRET, httponly=True, secure=is_cookie_https)
        
-       
-        return {"info":"success login", "user_name":user["user_username"]}
+        user_id = user["user_id"]
+        user_username = user["user_username"]
+        
+        
+        return {"info":"success login", "user_name":user_username, "user_id":user_id}
     except Exception as ex:
         print(ex)
         response.status = 400
         return {"info":str(ex)}
     finally:
         if "db" in locals(): db.close()
+
+

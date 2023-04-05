@@ -48,5 +48,7 @@ You
 
 
 ALSO
-message when trying logging in with an non existing user
+    - message when trying logging in with an non existing user
+    - Style VERIFIED
+    - LIVE tweet update in app.js
 

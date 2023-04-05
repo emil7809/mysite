@@ -1,7 +1,6 @@
 from bottle import get, template, request, response
 import x
 
-
 @get("/login")
 def _():
     response.add_header("Cache-Control", "no-cashe, no-store, must-revalidate, max-age=0")

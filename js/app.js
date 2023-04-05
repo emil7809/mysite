@@ -27,7 +27,7 @@
                     </g>
                 </svg>
                 <div class="info">
-                    <p>@emilyhoolahan</p>
+                    <p>@{{me["user_username"]}}</p>
                     <p>•</p>
                     <p>${data.tweet_created_at}</p>
                 </div>

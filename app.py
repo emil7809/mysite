@@ -14,6 +14,7 @@ import api.api_sign_up
 import api.validate_user
 import api.api_forgotten_password
 import api.api_reset_password
+import api.api_delet_user
 
 import views.index
 import views.profile

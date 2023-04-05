@@ -95,6 +95,7 @@
             </g>
           </svg></a>
         % if me:
+
         <a href="/me"><svg viewBox="0 0 24 24" aria-hidden="true" class="icon">
             <g>
               <path
@@ -124,7 +125,7 @@
 
         % if me:
         <form action="/logout">
-          <button style="all:unset"><img class="smol_img" src="/avatars/cdd0a0a3be06427f84111a767e9729f9.jpg"></button>
+          <button style="all:unset"><img class="smol_img" src="/avatars/{{me['user_avatar']}}"></button>
         </form>
         % end
       </div>
