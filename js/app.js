@@ -241,4 +241,37 @@
             editModule.classList.add("hide")
         }
     }
+
+    
+    function toggleSearchContainer() {
+        const searchContainer = document.querySelector("#search_container")
+        if (searchContainer.classList.contains("hide")) {
+            searchContainer.classList.remove("hide")
+        }
+        else {
+            searchContainer.classList.add("hide")
+        }
+    }
+
+    let the_timer 
+    function search() {
+        clearTimeout(the_timer)
+        the_timer = setTimeout(async function(){
+            const conn = await fetch("/search", {
+                method: "POST"
+            })
+            const data = await conn.json()
+            console.log(data)
+            let reusult = ""
+            document.querySelector("#search_container").innerHTML = ""
+            data.forEach((item) => {
+                console.log(item.name)
+                reusult += `<div>${item.name}</div>`
+            });
+            console.log(reusult)
+           document.querySelector("#search_container").insertAdjacentElement('afterbegin', reusult)
+        }, 500)
+
+       
+    }
   

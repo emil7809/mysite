@@ -7,7 +7,11 @@
                 </path>
             </g>
         </svg>
-        <input type="search" placeholder="Search Twitter">
+        <input oninput="search()" onfocus="toggleSearchContainer()" onblur="toggleSearchContainer()" type="search"
+            placeholder="Search Twitter">
+    </div>
+    <div id="search_container" class="hide">
+        <p>reult</p>
     </div>
 
     <section id="who_to_follow">

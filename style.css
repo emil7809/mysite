@@ -617,6 +617,15 @@ nav .icon,
   #right_col input {
     all: unset;
   }
+
+  #right_col #search_container {
+    background: gray;
+    padding: 1rem;
+    position: fixed;
+    top: 60px;
+    width: 20rem;
+    z-index: 999;
+  }
   #right_col .input_container {
     display: flex;
     align-items: center;
